@@ -1,0 +1,231 @@
+---
+// Hero.astro
+---
+
+<section id="inicio" class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Column: Presentation & CTA -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <!-- Status / Telemetry badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#111827] border border-[#1f293d] text-xs font-mono text-slate-300">
+          <span class="inline-block w-2 h-2 rounded-full bg-[#00ff66] animate-pulse"></span>
+          <span class="text-[#00f0ff] font-semibold">SEC_OPS // INFRA_DEFENSE</span>
+          <span class="text-slate-600">|</span>
+          <span class="text-slate-400">ASIX CERTIFIED</span>
+        </div>
+
+        <!-- Name & Title -->
+        <div class="space-y-2">
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
+            Marco Octavio <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00f0ff] via-cyan-200 to-[#00ff66]">
+              Maciel Borges
+            </span>
+          </h1>
+
+          <!-- Typewriter Effect Container -->
+          <div class="min-h-[2.5rem] flex items-center">
+            <span class="text-[#00ff66] font-mono text-lg sm:text-2xl mr-2 font-bold">#</span>
+            <span id="typewriter-text" class="text-slate-200 font-mono text-lg sm:text-2xl font-medium tracking-tight"></span>
+            <span id="typewriter-cursor" class="inline-block w-2.5 h-6 bg-[#00f0ff] ml-1 animate-pulse"></span>
+          </div>
+        </div>
+
+        <!-- Bio Paragraph -->
+        <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl">
+          Técnico Superior en <span class="text-white font-medium">Administración de Sistemas Informáticos en Red (ASIX)</span>. Especializado en el despliegue y hardening de infraestructuras Linux y Windows Server, auditoría y análisis de paquetes con Wireshark, monitorización centralizada con la pila ELK y automatización de procesos mediante Bash y Python.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <!-- GitHub Action -->
+          <a 
+            href="https://github.com/marcooctavio89" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#00f0ff] text-[#0b0f19] font-mono font-semibold text-sm hover:bg-cyan-300 transition-all transform hover:-translate-y-0.5 shadow-lg shadow-[#00f0ff]/20"
+          >
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            <span>Ver GitHub</span>
+          </a>
+
+          <!-- Download CV Action -->
+          <a 
+            href="/Marco_Maciel_CV.pdf" 
+            download="Marco_Maciel_CV.pdf" 
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#111827] border border-[#00ff66]/40 text-[#00ff66] font-mono font-semibold text-sm hover:bg-[#00ff66]/10 hover:border-[#00ff66] transition-all transform hover:-translate-y-0.5 shadow-md shadow-[#00ff66]/10"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            <span>Descargar CV</span>
+          </a>
+
+          <!-- Contact Action -->
+          <a 
+            href="#contacto" 
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#111827] border border-[#1f293d] text-slate-300 font-mono text-sm hover:text-white hover:border-slate-500 transition-all"
+          >
+            <svg class="w-4 h-4 text-[#00f0ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            <span>Contacto</span>
+          </a>
+        </div>
+
+        <!-- Languages Fast Preview -->
+        <div class="pt-4 flex flex-wrap items-center gap-2 font-mono text-xs text-slate-400">
+          <span class="text-slate-500 font-semibold">IDIOMAS:</span>
+          <span class="px-2.5 py-1 rounded bg-[#111827] border border-[#1f293d] text-slate-300">
+            🇪🇸 Español <span class="text-[#00ff66]">(Nativo)</span>
+          </span>
+          <span class="px-2.5 py-1 rounded bg-[#111827] border border-[#1f293d] text-slate-300">
+            🏴󠁥󠁳󠁣󠁴󠁿 Catalán <span class="text-[#00ff66]">(Nativo)</span>
+          </span>
+          <span class="px-2.5 py-1 rounded bg-[#111827] border border-[#1f293d] text-slate-300">
+            🇵🇹 Portugués <span class="text-[#00ff66]">(Nativo)</span>
+          </span>
+          <span class="px-2.5 py-1 rounded bg-[#111827] border border-[#1f293d] text-slate-300">
+            🇬🇧 Inglés <span class="text-[#00f0ff] font-bold">(B2)</span>
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Interactive Cyber Dashboard Telemetry Card -->
+      <div class="lg:col-span-5">
+        <div class="relative rounded-2xl bg-[#111827]/90 border border-[#1f293d] p-6 shadow-2xl backdrop-blur-sm group hover:border-[#00f0ff]/40 transition-all duration-300">
+          
+          <!-- Card Header / Terminal Dots -->
+          <div class="flex items-center justify-between pb-4 mb-5 border-b border-[#1f293d]">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+              <span class="ml-2 font-mono text-xs text-slate-400 font-semibold">SOC_NODE_01 :: TELEMETRY</span>
+            </div>
+            <span class="font-mono text-xs text-[#00ff66] flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#00ff66]"></span> ONLINE
+            </span>
+          </div>
+
+          <!-- Telemetry Specs Grid -->
+          <div class="space-y-4 font-mono text-xs">
+            
+            <!-- Item 1: Systems -->
+            <div class="p-3 rounded-lg bg-[#0b0f19] border border-[#1f293d]/80 hover:border-[#00f0ff]/30 transition-colors">
+              <div class="flex justify-between text-slate-400 mb-1">
+                <span class="text-slate-300 font-semibold flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 text-[#00f0ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"/></svg>
+                  ADMINISTRACIÓN DE SISTEMAS
+                </span>
+                <span class="text-[#00ff66]">LISTO</span>
+              </div>
+              <p class="text-slate-400 text-[11px]">Linux (Ubuntu, LVM, Bash) & Windows Server (AD, GPO, FSMO, Samba)</p>
+            </div>
+
+            <!-- Item 2: Security & Analysis -->
+            <div class="p-3 rounded-lg bg-[#0b0f19] border border-[#1f293d]/80 hover:border-[#00ff66]/30 transition-colors">
+              <div class="flex justify-between text-slate-400 mb-1">
+                <span class="text-slate-300 font-semibold flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 text-[#00ff66]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                  AUDITORÍA & CIBERSEGURIDAD
+                </span>
+                <span class="text-[#00f0ff]">ACTIVO</span>
+              </div>
+              <p class="text-slate-400 text-[11px]">Wireshark (análisis paquetes), Nmap, Metasploitable, Python audit scripts</p>
+            </div>
+
+            <!-- Item 3: SIEM & Monitoring -->
+            <div class="p-3 rounded-lg bg-[#0b0f19] border border-[#1f293d]/80 hover:border-amber-400/30 transition-colors">
+              <div class="flex justify-between text-slate-400 mb-1">
+                <span class="text-slate-300 font-semibold flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                  MONITORIZACIÓN CENTRALIZADA
+                </span>
+                <span class="text-[#00ff66]">INGESTING</span>
+              </div>
+              <p class="text-slate-400 text-[11px]">Pila ELK (Elasticsearch 8, Kibana Dashboards, Agentes Winlogbeat)</p>
+            </div>
+
+            <!-- Item 4: Quick Command Line Snippet -->
+            <div class="p-3 rounded-lg bg-[#070a12] border border-[#1f293d] font-mono text-[11px] text-slate-300 overflow-x-auto">
+              <div class="text-slate-500"># auth.log security probe:</div>
+              <div class="text-[#00ff66]">$ python3 parse_auth.py --analyze /var/log/auth.log</div>
+              <div class="text-[#00f0ff] mt-0.5">» 1,420 events scanned | 0 critical alerts active</div>
+            </div>
+
+          </div>
+
+          <!-- Card Footer Status -->
+          <div class="mt-4 pt-3 border-t border-[#1f293d] flex items-center justify-between text-[11px] font-mono text-slate-400">
+            <span>UPTIME: 99.98%</span>
+            <span class="text-[#00f0ff]">LOCATION: BARCELONA, ES</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Typewriter JavaScript -->
+<script>
+  const roles = [
+    "Administrador de Sistemas & Redes",
+    "Especialista en Seguridad & Hardening",
+    "Auditoría con Wireshark & Nmap",
+    "Monitorización SIEM (Elasticsearch & Kibana)",
+    "Automatización con Python & Bash"
+  ];
+
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const speed = 75;
+  const deleteSpeed = 35;
+  const delayBetweenWords = 1800;
+
+  const typewriterElement = document.getElementById("typewriter-text");
+
+  function type() {
+    if (!typewriterElement) return;
+    const currentWord = roles[roleIndex];
+
+    if (!isDeleting) {
+      typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
+      charIndex++;
+      if (charIndex === currentWord.length) {
+        isDeleting = true;
+        setTimeout(type, delayBetweenWords);
+        return;
+      }
+      setTimeout(type, speed);
+    } else {
+      typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
+      charIndex--;
+      if (charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        setTimeout(type, 300);
+        return;
+      }
+      setTimeout(type, deleteSpeed);
+    }
+  }
+
+  // Start on DOM ready
+  document.addEventListener("DOMContentLoaded", () => {
+    type();
+  });
+  // Also start directly in case already loaded
+  if (document.readyState === "complete" || document.readyState === "interactive") {
+    type();
+  }
+</script>

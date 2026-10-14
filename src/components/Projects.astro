@@ -1,0 +1,178 @@
+---
+// Projects.astro
+const projects = [
+  {
+    title: "Script de Auditoría de Logs SSH (auth.log)",
+    subtitle: "Detección de Fuerza Bruta & Análisis Forense en Linux",
+    status: "PROYECTO AUDITORÍA",
+    statusColor: "#00ff66",
+    githubUrl: "https://github.com/marcooctavio89",
+    description: "Herramienta desarrollada en Python diseñada para parsear e interpretar registros en `/var/log/auth.log` en servidores Ubuntu y Debian. Detecta patrones anómalos de conexión SSH, intentos reiterados de fuerza bruta, usuarios inexistentes y correlación de IPs atacantes.",
+    highlights: [
+      "Extracción y tokenización de eventos SSH con expresiones regulares de alto rendimiento.",
+      "Identificación automática de IPs recurrentes con umbral configurable de intentos fallidos.",
+      "Generación de reportes limpios por terminal y exportación estructurada para equipos SOC.",
+      "Integración opcional con reglas de bloqueo en cortafuegos (iptables / UFW)."
+    ],
+    tech: ["Python 3", "Regex", "Linux auth.log", "Bash", "Seguridad Defensiva", "Hardening"],
+    terminalSnippet: "$ python3 auth_audit.py -f /var/log/auth.log --threshold 5\n[ALERT] IP 192.168.1.150 excedió límite (47 intentos fallidos para 'root')\n[INFO] Generando informe forense: audit_report_2026.json"
+  },
+  {
+    title: "Análisis de Tráfico y Vulnerabilidades de Red",
+    subtitle: "Laboratorio Práctico con Wireshark & Metasploitable",
+    status: "LABORATORIO DEFENSIVO",
+    statusColor: "#00f0ff",
+    githubUrl: "https://github.com/marcooctavio89",
+    description: "Auditoría integral de seguridad en red interna emulada. Inspección profunda de paquetes con Wireshark sobre servicios legacy (FTP, Telnet y HTTP no cifrado) desplegados en entorno vulnerable Metasploitable, documentando riesgos de intercepción y mitigaciones.",
+    highlights: [
+      "Captura y análisis de flujos TCP/IP completos e identificación de credenciales en texto claro.",
+      "Escaneo de reconocimiento y mapeo de vectores de ataque utilizando Nmap.",
+      "Documentación técnica de contramedidas: migración a protocolos seguros (SFTP, SSH, HTTPS) y segmentación con VLANs.",
+      "Elaboración de informe de vulnerabilidades con clasificación según impacto y severidad."
+    ],
+    tech: ["Wireshark", "Nmap", "Metasploitable", "TCP/IP", "FTP / HTTP", "Protocol Analysis"],
+    terminalSnippet: "$ tshark -r capture.pcap -Y 'ftp.request.command == USER || ftp.request.command == PASS'\n5.120 -> USER anonymous\n5.125 -> PASS [EXPOSED_SECRET]\n[REMEDIATION] Deshabilitar FTP plano y forzar TLS/SFTP."
+  },
+  {
+    title: "Infraestructura Active Directory & Samba AD",
+    subtitle: "Despliegue de Dominio, GPO & Roles FSMO",
+    status: "INFRAESTRUCTURA HÍBRIDA",
+    statusColor: "#a855f7",
+    githubUrl: "https://github.com/marcooctavio89",
+    description: "Diseño y despliegue de una infraestructura de red corporativa centralizada con Windows Server y Samba 4 AD en GNU/Linux. Gestión integral del ciclo de vida de usuarios, directivas de seguridad para endpoints y roles maestros de operaciones (FSMO).",
+    highlights: [
+      "Configuración de bosques y controladores de dominio redundantes.",
+      "Diseño y auditoría de Directivas de Grupo (GPO): bloqueo de USBs, políticas de contraseñas complejas y restricción de software.",
+      "Gestión y transferencia de roles FSMO (Schema Master, PDC Emulator, RID Master).",
+      "Interoperabilidad entre clientes heterogéneos Windows 10/11 y estaciones Linux mediante autenticación Kerberos/LDAP."
+    ],
+    tech: ["Windows Server", "Active Directory", "GPO", "FSMO Roles", "Samba 4 AD", "DNS/DHCP", "Kerberos"],
+    terminalSnippet: "PS C:\\> Get-ADDomainController -Filter * | Select-Object Name, Forest, Roles\nName      : DC01-SEC\nRoles     : {SchemaMaster, DomainNamingMaster, PDCEmulator, RIDMaster...}\nStatus    : HEALTHY / SYNCHRONIZED"
+  },
+  {
+    title: "Entorno SIEM Centralizado (Pila ELK)",
+    subtitle: "Centralización y Alertas de Seguridad en Ubuntu",
+    status: "SOC & MONITORIZACIÓN",
+    statusColor: "#f59e0b",
+    githubUrl: "https://github.com/marcooctavio89",
+    description: "Arquitectura de recolección y análisis de logs en tiempo real para visibilidad de seguridad. Despliegue de Elasticsearch 8, Kibana y agentes Winlogbeat en servidores cliente para correlacionar eventos de autenticación, privilegios e integridad.",
+    highlights: [
+      "Despliegue de nodo Elasticsearch 8 optimizado en Ubuntu Server con autenticación TLS.",
+      "Configuración de Winlogbeat en máquinas Windows para la captura de Event IDs críticos (4624, 4625, 4672).",
+      "Creación de paneles y dashboards personalizados en Kibana para visualización de intentos de inicio de sesión por origen geográfico.",
+      "Definición de reglas de alerta temprana frente a escaladas de privilegios y patrones anómalos."
+    ],
+    tech: ["Elasticsearch 8", "Kibana", "Winlogbeat", "Ubuntu Server", "Syslog", "SIEM Architecture"],
+    terminalSnippet: "$ curl -X GET 'https://localhost:9200/_cluster/health?pretty'\n{\n  'cluster_name' : 'secops-cluster',\n  'status' : 'green',\n  'number_of_nodes' : 3,\n  'active_shards' : 24\n}"
+  }
+];
+---
+
+<section id="proyectos" class="py-20 relative bg-[#070a12]/50 border-y border-[#1f293d]/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="space-y-3 mb-16">
+      <div class="flex items-center gap-2 font-mono text-sm text-[#00ff66]">
+        <span>03.</span>
+        <span class="tracking-widest uppercase">Proyectos Relevantes</span>
+        <div class="h-px bg-[#1f293d] flex-1 max-w-xs"></div>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Casos Prácticos & Laboratorios de Seguridad
+      </h2>
+      <p class="text-slate-400 max-w-2xl text-base sm:text-lg">
+        Demostración aplicada de administración de sistemas, auditoría forense, laboratorios de redes y monitorización centralizada.
+      </p>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {projects.map((proj) => (
+        <div class="rounded-2xl bg-[#111827] border border-[#1f293d] p-6 lg:p-8 flex flex-col justify-between hover:border-slate-600 transition-all duration-300 shadow-xl group">
+          
+          <div>
+            <!-- Header Badges -->
+            <div class="flex items-center justify-between mb-4">
+              <span 
+                class="font-mono text-xs px-2.5 py-1 rounded-md border"
+                style={`color: ${proj.statusColor}; border-color: ${proj.statusColor}40; background-color: ${proj.statusColor}10;`}
+              >
+                {proj.status}
+              </span>
+              <a 
+                href={proj.githubUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 font-mono text-xs text-slate-400 hover:text-[#00f0ff] transition-colors"
+              >
+                <span>GitHub Repos</span>
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>↗</span>
+              </a>
+            </div>
+
+            <!-- Title & Subtitle -->
+            <h3 class="text-xl font-bold text-white group-hover:text-[#00f0ff] transition-colors mb-1">
+              {proj.title}
+            </h3>
+            <p class="font-mono text-xs text-[#00ff66] mb-4">
+              // {proj.subtitle}
+            </p>
+
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              {proj.description}
+            </p>
+
+            <!-- Key points -->
+            <div class="mb-6 space-y-2">
+              <span class="font-mono text-xs text-slate-400 font-semibold uppercase tracking-wider block mb-2">
+                Arquitectura & Aportes Clave:
+              </span>
+              <ul class="space-y-1.5 text-xs text-slate-400 font-sans">
+                {proj.highlights.map((item) => (
+                  <li class="flex items-start gap-2">
+                    <span class="text-[#00f0ff] font-bold mt-0.5">›</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- Terminal Output Box -->
+            <div class="mb-6 rounded-lg bg-[#070a12] border border-[#1f293d] p-3 font-mono text-[11px] text-slate-300 overflow-x-auto">
+              <div class="flex items-center gap-1.5 pb-2 mb-2 border-b border-[#1f293d]/60 text-slate-500 text-[10px]">
+                <span class="w-2 h-2 rounded-full bg-slate-600 inline-block"></span>
+                <span>Console Output Execution</span>
+              </div>
+              <pre class="text-[#00ff66]/90 whitespace-pre-wrap">{proj.terminalSnippet}</pre>
+            </div>
+          </div>
+
+          <!-- Bottom: Tech Stack Tags & CTA Button -->
+          <div class="pt-4 border-t border-[#1f293d] space-y-4">
+            <div class="flex flex-wrap gap-1.5">
+              {proj.tech.map((t) => (
+                <span class="font-mono text-[11px] px-2.5 py-1 rounded bg-[#0b0f19] border border-[#1f293d] text-slate-300">
+                  {t}
+                </span>
+              ))}
+            </div>
+
+            <a 
+              href={proj.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#162032] border border-[#1f293d] hover:border-[#00f0ff] hover:text-[#00f0ff] text-slate-300 font-mono text-xs font-semibold transition-all"
+            >
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>Examinar Repositorio en GitHub ↗</span>
+            </a>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

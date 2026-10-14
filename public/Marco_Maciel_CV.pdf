@@ -1,0 +1,118 @@
+%PDF-1.4
+1 0 obj
+<<
+  /Type /Catalog
+  /Pages 2 0 R
+>>
+endobj
+2 0 obj
+<<
+  /Type /Pages
+  /Kids [3 0 R]
+  /Count 1
+>>
+endobj
+3 0 obj
+<<
+  /Type /Page
+  /Parent 2 0 R
+  /MediaBox [0 0 595 842]
+  /Contents 4 0 R
+  /Resources <<
+    /Font <<
+      /F1 5 0 R
+      /F2 6 0 R
+    >>
+  >>
+>>
+endobj
+4 0 obj
+<<
+  /Length 1150
+>>
+stream
+BT
+/F1 20 Tf
+50 780 Td
+(Marco Octavio Maciel Borges) Tj
+0 -24 Td
+/F2 12 Tf
+(Tecnico en Administracion de Sistemas, Redes y Ciberseguridad - ASIX) Tj
+0 -20 Td
+(Email: marcooctavio89@gmail.com | GitHub: github.com/marcooctavio89) Tj
+0 -15 Td
+(Idiomas: Espanol (Nativo), Catalan (Nativo), Portugues (Nativo), Ingles (B2)) Tj
+0 -30 Td
+/F1 14 Tf
+(PERFIL PROFESIONAL) Tj
+0 -18 Td
+/F2 10 Tf
+(Administrador de sistemas y redes enfocado en infraestructuras Linux y Windows Server,) Tj
+0 -14 Td
+(hardening, analisis forense de logs, auditoria de redes con Wireshark/Nmap y SIEM con ELK.) Tj
+0 -26 Td
+/F1 14 Tf
+(COMPETENCIAS CLAVE) Tj
+0 -18 Td
+/F2 10 Tf
+(- Sistemas: Linux (Ubuntu Server, LVM, Bash Scripting), Windows Server (AD, GPO, FSMO)) Tj
+0 -14 Td
+(- Ciberseguridad: Wireshark, Nmap, Metasploitable, scripts de auditoria en Python) Tj
+0 -14 Td
+(- Monitorizacion: Pila ELK (Elasticsearch 8, Kibana, Winlogbeat)) Tj
+0 -14 Td
+(- Desarrollo y Bases de Datos: Python, Bash, PHP, MySQL, Apache, Git) Tj
+0 -26 Td
+/F1 14 Tf
+(PROYECTOS DESTACADOS) Tj
+0 -18 Td
+/F2 10 Tf
+(- Script de Auditoria de Logs SSH (auth.log) en Python con deteccion de accesos sospechosos) Tj
+0 -14 Td
+(- Analisis de Trafico y Vulnerabilidades de Red en laboratorio Metasploitable con Wireshark) Tj
+0 -14 Td
+(- Despliegue de Infraestructura Active Directory y Samba AD con GPOs y roles FSMO) Tj
+0 -14 Td
+(- Entorno SIEM Centralizado con Elasticsearch 8, Kibana y Winlogbeat en Ubuntu) Tj
+0 -26 Td
+/F1 14 Tf
+(EXPERIENCIA Y FORMACION) Tj
+0 -18 Td
+/F2 10 Tf
+(- Tecnico de Soporte Informatico (Practicas FCT) - Fundacio Pere Tarres) Tj
+0 -14 Td
+(- Formacion en Administracion de Sistemas Informaticos en Red (ASIX)) Tj
+ET
+endstream
+endobj
+5 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica-Bold
+>>
+endobj
+6 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica
+>>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000266 00000 n 
+0000001469 00000 n 
+0000001550 00000 n 
+trailer
+<<
+  /Size 7
+  /Root 1 0 R
+>>
+startxref
+1626
+%%EOF

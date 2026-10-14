@@ -1,0 +1,121 @@
+---
+// Experience.astro
+const experiences = [
+  {
+    type: "EXPERIENCIA LABORAL",
+    role: "Técnico de Soporte Informático (Prácticas FCT)",
+    organization: "Fundació Pere Tarrés",
+    period: "Prácticas Formativas FCT",
+    location: "Barcelona, España",
+    badgeColor: "#00ff66",
+    summary: "Atención técnica integral a usuarios, resolución de incidencias en puestos de trabajo, mantenimiento preventivo de infraestructura y configuración de redes locales.",
+    tasks: [
+      "Soporte informático a usuarios de nivel 1 y 2 (hardware, periféricos, sistemas operativos Windows/Linux y aplicaciones).",
+      "Instalación, clonación y configuración de nuevos puestos de trabajo y perfiles corporativos.",
+      "Diagnóstico y resolución de incidencias en redes de área local (LAN), cableado estructurado y conectividad Wi-Fi.",
+      "Gestión de accesos, inventario de equipamiento informático y documentación técnica de incidencias."
+    ],
+    tech: ["Soporte Nivel 1/2", "Windows 10/11", "GNU/Linux", "Redes LAN", "Hardware", "Gestión de Incidencias"]
+  },
+  {
+    type: "EDUCACIÓN SUPERIOR TÉCNICA",
+    role: "Ciclo Formativo de Grado Superior en Administración de Sistemas Informáticos en Red (ASIX)",
+    organization: "Formación Profesional Oficial",
+    period: "Graduado / Certificado",
+    location: "Barcelona, España",
+    badgeColor: "#00f0ff",
+    summary: "Formación especializada en la administración, securización y optimización de redes, servidores empresariales y servicios de telecomunicaciones.",
+    tasks: [
+      "Administración avanzada de sistemas operativos de red: Linux (Ubuntu Server, Debian) y Windows Server.",
+      "Diseño y despliegue de infraestructuras de red: conmutación, enrutamiento, VLANs, subnetting, DHCP y DNS con BIND9.",
+      "Seguridad de red y hardening: cortafuegos (iptables/UFW), análisis con Wireshark y Nmap, auditoría de credenciales.",
+      "Implantación de servicios de Internet y alta disponibilidad: Apache, Nginx, MySQL, PHP, FTP y virtualización.",
+      "Automatización de administración mediante scripting en Bash y desarrollo de herramientas en Python."
+    ],
+    tech: ["ASIX", "Linux Server", "Windows Server AD", "Seguridad en Redes", "Wireshark", "Bash Scripting", "Python", "ELK Stack"]
+  }
+];
+---
+
+<section id="experiencia" class="py-20 relative bg-[#070a12]/50 border-t border-[#1f293d]/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="space-y-3 mb-16">
+      <div class="flex items-center gap-2 font-mono text-sm text-[#00f0ff]">
+        <span>05.</span>
+        <span class="tracking-widest uppercase">Trayectoria Profesional</span>
+        <div class="h-px bg-[#1f293d] flex-1 max-w-xs"></div>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Experiencia & Formación Académica
+      </h2>
+      <p class="text-slate-400 max-w-2xl text-base sm:text-lg">
+        Evolución técnica desde la formación académica superior en ASIX hasta la práctica operativa en soporte de infraestructuras.
+      </p>
+    </div>
+
+    <!-- Timeline Layout -->
+    <div class="space-y-8 relative before:absolute before:inset-0 before:left-4 md:before:left-1/2 before:w-0.5 before:bg-[#1f293d] before:-translate-x-1/2 before:hidden md:before:block">
+      {experiences.map((item, index) => (
+        <div class={`relative flex flex-col md:flex-row gap-6 md:gap-12 items-start ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+          
+          <!-- Timeline Central Node (Desktop) -->
+          <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#111827] border-2 border-[#1f293d] items-center justify-center z-10 group-hover:border-[#00f0ff]">
+            <span class="w-2.5 h-2.5 rounded-full" style={`background-color: ${item.badgeColor};`}></span>
+          </div>
+
+          <!-- Card Content (Half width on desktop) -->
+          <div class="w-full md:w-[calc(50%-2rem)] rounded-2xl bg-[#111827] border border-[#1f293d] p-6 sm:p-7 hover:border-slate-500 transition-all duration-300 shadow-xl group">
+            
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <span 
+                class="font-mono text-xs px-2.5 py-1 rounded-md border"
+                style={`color: ${item.badgeColor}; border-color: ${item.badgeColor}40; background-color: ${item.badgeColor}10;`}
+              >
+                {item.type}
+              </span>
+              <span class="font-mono text-xs text-slate-400">{item.period}</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-white group-hover:text-[#00f0ff] transition-colors">
+              {item.role}
+            </h3>
+
+            <div class="flex items-center gap-2 font-mono text-xs text-slate-400 mt-1 mb-4">
+              <span class="text-slate-200 font-medium">{item.organization}</span>
+              <span>•</span>
+              <span class="text-slate-400">{item.location}</span>
+            </div>
+
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              {item.summary}
+            </p>
+
+            <!-- Responsibilities / Learnings -->
+            <ul class="space-y-2 text-xs text-slate-400 mb-6">
+              {item.tasks.map((task) => (
+                <li class="flex items-start gap-2">
+                  <span class="text-[#00ff66] font-bold mt-0.5">❯</span>
+                  <span>{task}</span>
+                </li>
+              ))}
+            </ul>
+
+            <!-- Tech badges -->
+            <div class="pt-4 border-t border-[#1f293d] flex flex-wrap gap-1.5">
+              {item.tech.map((t) => (
+                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-[#0b0f19] border border-[#1f293d] text-slate-400">
+                  {t}
+                </span>
+              ))}
+            </div>
+
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

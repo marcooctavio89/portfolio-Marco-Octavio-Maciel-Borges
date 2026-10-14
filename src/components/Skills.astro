@@ -1,0 +1,185 @@
+---
+// Skills.astro
+const skillCategories = [
+  {
+    id: "systems-networks",
+    title: "Sistemas & Redes",
+    icon: "server",
+    color: "#00f0ff",
+    badge: "CORE INFRASTRUCTURE",
+    description: "Administración, configuración avanzada, servicios de red y gestión de identidades en entornos corporativos híbridos.",
+    skills: [
+      { name: "GNU/Linux (Ubuntu Server)", level: "Avanzado", tags: ["Kernel", "CLI", "Systemd"] },
+      { name: "Gestión de Almacenamiento (LVM)", level: "Avanzado", tags: ["Particionado", "Volúmenes", "Snapshots"] },
+      { name: "Bash Scripting & Automatización", level: "Avanzado", tags: ["Crontab", "Backups", "Pipelines"] },
+      { name: "Servicios de Red & DNS (BIND9)", level: "Sólido", tags: ["DNS", "DHCP", "Enrutamiento"] },
+      { name: "Windows Server (2019/2022)", level: "Avanzado", tags: ["Active Directory", "Dominio"] },
+      { name: "Directivas de Grupo (GPO)", level: "Avanzado", tags: ["Hardening", "Auditoría", "Despliegue"] },
+      { name: "Roles FSMO & Controladores de Dominio", level: "Sólido", tags: ["Replicación", "Esquema"] },
+      { name: "Samba 4 Active Directory", level: "Sólido", tags: ["Interoperabilidad", "Linux/Windows"] }
+    ]
+  },
+  {
+    id: "cybersecurity",
+    title: "Ciberseguridad & Análisis",
+    icon: "shield",
+    color: "#00ff66",
+    badge: "DEFENSE & AUDIT",
+    description: "Inspección forense de tráfico, análisis de vectores de ataque, escaneo de vulnerabilidades y hardening de sistemas.",
+    skills: [
+      { name: "Wireshark (Inspección de Paquetes)", level: "Avanzado", tags: ["PCAP", "TCP/IP", "Filtros BPF"] },
+      { name: "Nmap Network Scanner", level: "Avanzado", tags: ["Descubrimiento", "NSE Scripts", "Puertos"] },
+      { name: "Metasploitable Lab", level: "Sólido", tags: ["Pentesting", "Auditoría de Servicios", "CVEs"] },
+      { name: "Scripts de Auditoría en Python", level: "Avanzado", tags: ["Log Parsing", "Regex", "Automatización"] },
+      { name: "Hardening de Servidores (SSH, UFW, Iptables)", level: "Avanzado", tags: ["Seguridad Perimetral", "Fail2ban"] },
+      { name: "Análisis Forense de Logs (auth.log, syslog)", level: "Avanzado", tags: ["Fuerza Bruta", "Detección"] }
+    ]
+  },
+  {
+    id: "monitoring-siem",
+    title: "Monitorización & SIEM",
+    icon: "chart",
+    color: "#a855f7",
+    badge: "VISIBILITY & LOGS",
+    description: "Recolección centralizada, ingesta masiva de registros, telemetría y cuadros de mando interactivos para alerta temprana.",
+    skills: [
+      { name: "Elasticsearch 8", level: "Sólido", tags: ["Índices", "Consultas KQL", "Clustering"] },
+      { name: "Kibana Dashboards", level: "Sólido", tags: ["Visualizaciones", "Mapas", "Alertas"] },
+      { name: "Agentes Winlogbeat", level: "Sólido", tags: ["Event Logs", "Windows Security", "Sysmon"] },
+      { name: "Logstash / Beats Pipeline", level: "Intermedio", tags: ["Filtros Grok", "Transformación"] },
+      { name: "Centralización de Eventos en Ubuntu", level: "Avanzado", tags: ["Syslog-ng", "Rsyslog", "Alertas"] }
+    ]
+  },
+  {
+    id: "dev-databases",
+    title: "Desarrollo & Bases de Datos",
+    icon: "code",
+    color: "#f59e0b",
+    badge: "AUTOMATION & DATA",
+    description: "Creación de herramientas a medida, scripts de soporte operativo y gestión de servicios web y bases de datos relacionales.",
+    skills: [
+      { name: "Python", level: "Avanzado", tags: ["Scripts Operativos", "Regex", "Manipulación de Datos"] },
+      { name: "PHP", level: "Intermedio", tags: ["Backend", "Integración Web", "APIs"] },
+      { name: "MySQL / MariaDB", level: "Sólido", tags: ["Consultas SQL", "Administración", "Backups"] },
+      { name: "Servidor Web Apache & Nginx", level: "Sólido", tags: ["Virtual Hosts", "SSL/TLS", "Reverse Proxy"] },
+      { name: "HTML5 & CSS3 / Modern Web", level: "Sólido", tags: ["Tailwind CSS", "Responsive UI"] },
+      { name: "Control de Versiones Git & GitHub", level: "Avanzado", tags: ["Git CLI", "Repositorios", "CI/CD"] }
+    ]
+  }
+];
+
+const languages = [
+  { lang: "Español", level: "Nativo", flag: "🇪🇸", percent: "100%" },
+  { lang: "Catalán", level: "Nativo", flag: "🏴󠁥󠁳󠁣󠁴󠁿", percent: "100%" },
+  { lang: "Portugués", level: "Nativo", flag: "🇵🇹", percent: "100%" },
+  { lang: "Inglés", level: "B2 (Competencia Profesional)", flag: "🇬🇧", percent: "75%" }
+];
+---
+
+<section id="habilidades" class="py-20 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="space-y-3 mb-16">
+      <div class="flex items-center gap-2 font-mono text-sm text-[#00f0ff]">
+        <span>02.</span>
+        <span class="tracking-widest uppercase">Competencias Técnicas</span>
+        <div class="h-px bg-[#1f293d] flex-1 max-w-xs"></div>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Matriz de Especialización & Tecnologías
+      </h2>
+      <p class="text-slate-400 max-w-2xl text-base sm:text-lg">
+        Conjunto de herramientas, protocolos y tecnologías aplicadas en la administración de infraestructuras críticas y auditoría de seguridad.
+      </p>
+    </div>
+
+    <!-- Skills Matrix Grid (2 columns on large screens) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {skillCategories.map((category) => (
+        <div class="rounded-2xl bg-[#111827] border border-[#1f293d] p-6 lg:p-7 hover:border-slate-600 transition-all duration-300 relative group flex flex-col justify-between">
+          
+          <!-- Top Badge & Title -->
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span 
+                class="font-mono text-xs px-2.5 py-1 rounded-md border" 
+                style={`color: ${category.color}; border-color: ${category.color}40; background-color: ${category.color}10;`}
+              >
+                {category.badge}
+              </span>
+              <span class="font-mono text-xs text-slate-500">ID: {category.id}</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+              {category.title}
+            </h3>
+            <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+              {category.description}
+            </p>
+
+            <!-- Skills List -->
+            <div class="space-y-3">
+              {category.skills.map((skill) => (
+                <div class="p-3 rounded-lg bg-[#0b0f19] border border-[#1f293d]/80 hover:border-[#1f293d] transition-colors">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-sm font-semibold text-slate-200">{skill.name}</span>
+                    <span class="text-xs font-mono text-[#00ff66] bg-[#00ff66]/10 px-2 py-0.5 rounded border border-[#00ff66]/20">
+                      {skill.level}
+                    </span>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5">
+                    {skill.tags.map((tag) => (
+                      <span class="text-[11px] font-mono text-slate-400 bg-[#162032] px-2 py-0.5 rounded">
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Bottom subtle indicator -->
+          <div class="mt-6 pt-4 border-t border-[#1f293d] flex items-center justify-between font-mono text-xs text-slate-500">
+            <span>VERIFIED SKILLSET</span>
+            <span class="text-slate-400 group-hover:text-white transition-colors">ASIX / SYSADMIN</span>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+    <!-- Languages Subsection -->
+    <div class="mt-12 p-6 sm:p-8 rounded-2xl bg-[#111827] border border-[#1f293d] relative overflow-hidden">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-6">
+        <div>
+          <span class="font-mono text-xs text-[#00ff66] uppercase tracking-wider">Comunicación Global</span>
+          <h3 class="text-xl font-bold text-white mt-1">Competencias Lingüísticas</h3>
+          <p class="text-slate-400 text-sm mt-1">Capacidad demostrada para trabajar y documentar en equipos multiculturales y entornos técnicos internacionales.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {languages.map((item) => (
+          <div class="p-4 rounded-xl bg-[#0b0f19] border border-[#1f293d] hover:border-[#00f0ff]/40 transition-all">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-2xl">{item.flag}</span>
+              <span class="font-mono text-xs text-[#00f0ff] font-bold">{item.percent}</span>
+            </div>
+            <div class="font-bold text-white text-base">{item.lang}</div>
+            <div class="text-xs font-mono text-slate-400 mt-0.5">{item.level}</div>
+            <!-- Progress bar -->
+            <div class="w-full bg-[#162032] h-1.5 rounded-full mt-3 overflow-hidden">
+              <div 
+                class="bg-gradient-to-r from-[#00f0ff] to-[#00ff66] h-full rounded-full" 
+                style={`width: ${item.percent};`}
+              ></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>
