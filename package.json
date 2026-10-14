@@ -9,6 +9,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "deploy": "astro build && cd dist && git init && git checkout -b gh-pages && git add -A && git commit -m 'deploy' && git remote add origin https://github.com/marcooctavio89/portfolio-Marco-Octavio-Maciel-Borges.git && git push -f origin gh-pages && rm -rf .git",
     "astro": "astro"
   },
   "dependencies": {
