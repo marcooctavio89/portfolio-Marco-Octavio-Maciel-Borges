@@ -69,10 +69,10 @@ const skillCategories = [
 ];
 
 const languages = [
-  { lang: "Español", level: "Nativo / C2", flag: "🇪🇸", percent: "100%" },
-  { lang: "Catalán", level: "Nativo / C2", isCatalan: true, percent: "100%" },
-  { lang: "Portugués", level: "Nativo / C2", flag: "🇧🇷", percent: "100%" },
-  { lang: "Inglés", level: "Intermedio B2", flag: "🇬🇧", percent: "75%" }
+  { lang: "Español", level: "Nativo / C2", percent: "100%" },
+  { lang: "Catalán", level: "Nativo / C2", percent: "100%" },
+  { lang: "Portugués", level: "Nativo / C2", percent: "100%" },
+  { lang: "Inglés", level: "Intermedio B2", percent: "75%" }
 ];
 ---
 
@@ -164,16 +164,9 @@ const languages = [
         {languages.map((item) => (
           <div class="p-4 rounded-xl bg-[#0b0f19] border border-[#1f293d] hover:border-[#00f0ff]/40 transition-all">
             <div class="flex items-center justify-between mb-2">
-              <span class="inline-flex items-center justify-center w-7 h-7 rounded bg-[#111827] border border-[#1f293d] text-base">
-                {item.isCatalan ? (
-                  <svg class="w-4 h-3 inline-block rounded-xs shadow-xs" viewBox="0 0 900 600"><rect width="900" height="600" fill="#fcd116"/><rect y="66.67" width="900" height="66.67" fill="#da121a"/><rect y="200" width="900" height="66.67" fill="#da121a"/><rect y="333.33" width="900" height="66.67" fill="#da121a"/><rect y="466.67" width="900" height="66.67" fill="#da121a"/></svg>
-                ) : (
-                  <span>{item.flag}</span>
-                )}
-              </span>
+              <span class="font-bold text-white text-base">{item.lang}</span>
               <span class="font-mono text-xs text-[#00f0ff] font-bold">{item.percent}</span>
             </div>
-            <div class="font-bold text-white text-base">{item.lang}</div>
             <div class="text-xs font-mono text-slate-400 mt-0.5">{item.level}</div>
             <!-- Progress bar -->
             <div class="w-full bg-[#162032] h-1.5 rounded-full mt-3 overflow-hidden">
