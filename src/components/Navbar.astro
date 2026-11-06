@@ -1,51 +1,53 @@
 ---
-// Navbar.astro
+// Navbar.astro — Clean light design with turquoise accents
 ---
 
-<header class="sticky top-0 z-50 w-full backdrop-blur-md bg-[#0b0f19]/85 border-b border-[#1f293d] transition-all duration-300">
+<header class="sticky top-0 z-50 w-full backdrop-blur-md bg-white/80 border-b border-slate-200/80 transition-all duration-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       
-      <!-- Logo / Terminal Prompt -->
-      <a href="#inicio" class="flex items-center gap-2 font-mono text-sm sm:text-base font-bold text-white group">
-        <span class="text-[#00ff66] transition-transform duration-300 group-hover:translate-x-0.5">❯</span>
-        <span class="text-[#00f0ff] group-hover:text-white transition-colors">marco@sysadmin</span>
-        <span class="text-slate-500">:</span>
-        <span class="text-[#00ff66]">~#</span>
-        <span class="inline-block w-2 h-4 bg-[#00f0ff] animate-pulse ml-0.5"></span>
+      <!-- Logo / Brand -->
+      <a href="#inicio" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-teal-400 flex items-center justify-center shadow-md shadow-cyan-500/20 group-hover:shadow-cyan-500/30 transition-shadow">
+          <span class="text-white font-bold text-sm">MM</span>
+        </div>
+        <div class="hidden sm:block">
+          <span class="font-bold text-slate-900 text-sm">Marco Maciel</span>
+          <span class="text-slate-400 text-xs block -mt-0.5">SysAdmin &amp; Security</span>
+        </div>
       </a>
 
       <!-- Desktop Navigation Links -->
-      <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-mono">
-        <a href="#inicio" class="px-3 py-1.5 rounded-md text-slate-300 hover:text-[#00f0ff] hover:bg-[#111827] transition-colors">
-          <span class="text-[#00f0ff]/60">01.</span> Inicio
+      <nav class="hidden md:flex items-center space-x-1 text-sm font-medium">
+        <a href="#inicio" class="px-3 py-2 rounded-lg text-slate-600 hover:text-cyan-600 hover:bg-cyan-50 transition-colors">
+          Inicio
         </a>
-        <a href="#habilidades" class="px-3 py-1.5 rounded-md text-slate-300 hover:text-[#00f0ff] hover:bg-[#111827] transition-colors">
-          <span class="text-[#00f0ff]/60">02.</span> Habilidades
+        <a href="#habilidades" class="px-3 py-2 rounded-lg text-slate-600 hover:text-cyan-600 hover:bg-cyan-50 transition-colors">
+          Habilidades
         </a>
-        <a href="#proyectos" class="px-3 py-1.5 rounded-md text-slate-300 hover:text-[#00f0ff] hover:bg-[#111827] transition-colors">
-          <span class="text-[#00f0ff]/60">03.</span> Proyectos
+        <a href="#proyectos" class="px-3 py-2 rounded-lg text-slate-600 hover:text-cyan-600 hover:bg-cyan-50 transition-colors">
+          Proyectos
         </a>
-        <a href="#terminal" class="px-3 py-1.5 rounded-md text-slate-300 hover:text-[#00ff66] hover:bg-[#111827] transition-colors">
-          <span class="text-[#00ff66]/60">04.</span> Terminal
+        <a href="#terminal" class="px-3 py-2 rounded-lg text-slate-600 hover:text-cyan-600 hover:bg-cyan-50 transition-colors">
+          Terminal
         </a>
-        <a href="#experiencia" class="px-3 py-1.5 rounded-md text-slate-300 hover:text-[#00f0ff] hover:bg-[#111827] transition-colors">
-          <span class="text-[#00f0ff]/60">05.</span> Formación
+        <a href="#experiencia" class="px-3 py-2 rounded-lg text-slate-600 hover:text-cyan-600 hover:bg-cyan-50 transition-colors">
+          Formación
         </a>
-        <a href="#contacto" class="px-3 py-1.5 rounded-md text-slate-300 hover:text-[#00f0ff] hover:bg-[#111827] transition-colors">
-          <span class="text-[#00f0ff]/60">06.</span> Contacto
+        <a href="#contacto" class="px-3 py-2 rounded-lg text-slate-600 hover:text-cyan-600 hover:bg-cyan-50 transition-colors">
+          Contacto
         </a>
       </nav>
 
-      <!-- Right Action Area (Live Status & GitHub) -->
+      <!-- Right Action Area -->
       <div class="hidden lg:flex items-center gap-3">
-        <!-- Live status pill -->
-        <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-[#111827] border border-[#1f293d] text-xs font-mono">
+        <!-- Availability pill -->
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-medium text-emerald-700">
           <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00ff66] opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-[#00ff66]"></span>
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
           </span>
-          <span class="text-slate-300">DISPONIBLE</span>
+          <span>Disponible</span>
         </div>
 
         <!-- GitHub Icon Link -->
@@ -53,7 +55,7 @@
           href="https://github.com/marcooctavio89" 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="p-2 rounded-lg bg-[#111827] border border-[#1f293d] text-slate-300 hover:text-[#00f0ff] hover:border-[#00f0ff]/50 transition-all"
+          class="p-2 rounded-lg bg-slate-100 text-slate-500 hover:text-cyan-600 hover:bg-cyan-50 transition-all"
           title="Ver perfil de GitHub"
         >
           <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -66,7 +68,7 @@
       <button 
         id="mobile-menu-btn" 
         type="button" 
-        class="md:hidden p-2 rounded-lg bg-[#111827] border border-[#1f293d] text-slate-300 hover:text-[#00f0ff] focus:outline-none"
+        class="md:hidden p-2 rounded-lg bg-slate-100 text-slate-500 hover:text-cyan-600 focus:outline-none"
         aria-label="Toggle menu"
       >
         <svg id="menu-icon-bars" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -81,36 +83,36 @@
   </div>
 
   <!-- Mobile Dropdown Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-[#0b0f19] border-b border-[#1f293d] px-4 pt-2 pb-4 space-y-2 font-mono text-sm">
-    <a href="#inicio" class="mobile-nav-link block px-3 py-2 rounded-md text-slate-300 hover:text-[#00f0ff] hover:bg-[#111827]">
-      <span class="text-[#00f0ff]">01.</span> Inicio
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-1">
+    <a href="#inicio" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-600 hover:text-cyan-600 hover:bg-cyan-50 font-medium text-sm">
+      Inicio
     </a>
-    <a href="#habilidades" class="mobile-nav-link block px-3 py-2 rounded-md text-slate-300 hover:text-[#00f0ff] hover:bg-[#111827]">
-      <span class="text-[#00f0ff]">02.</span> Habilidades
+    <a href="#habilidades" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-600 hover:text-cyan-600 hover:bg-cyan-50 font-medium text-sm">
+      Habilidades
     </a>
-    <a href="#proyectos" class="mobile-nav-link block px-3 py-2 rounded-md text-slate-300 hover:text-[#00f0ff] hover:bg-[#111827]">
-      <span class="text-[#00f0ff]">03.</span> Proyectos
+    <a href="#proyectos" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-600 hover:text-cyan-600 hover:bg-cyan-50 font-medium text-sm">
+      Proyectos
     </a>
-    <a href="#terminal" class="mobile-nav-link block px-3 py-2 rounded-md text-slate-300 hover:text-[#00ff66] hover:bg-[#111827]">
-      <span class="text-[#00ff66]">04.</span> Terminal
+    <a href="#terminal" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-600 hover:text-cyan-600 hover:bg-cyan-50 font-medium text-sm">
+      Terminal
     </a>
-    <a href="#experiencia" class="mobile-nav-link block px-3 py-2 rounded-md text-slate-300 hover:text-[#00f0ff] hover:bg-[#111827]">
-      <span class="text-[#00f0ff]">05.</span> Formación
+    <a href="#experiencia" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-600 hover:text-cyan-600 hover:bg-cyan-50 font-medium text-sm">
+      Formación
     </a>
-    <a href="#contacto" class="mobile-nav-link block px-3 py-2 rounded-md text-slate-300 hover:text-[#00f0ff] hover:bg-[#111827]">
-      <span class="text-[#00f0ff]">06.</span> Contacto
+    <a href="#contacto" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-slate-600 hover:text-cyan-600 hover:bg-cyan-50 font-medium text-sm">
+      Contacto
     </a>
     
-    <div class="pt-2 border-t border-[#1f293d] flex items-center justify-between">
-      <div class="flex items-center gap-2 text-xs text-slate-400">
-        <span class="w-2 h-2 rounded-full bg-[#00ff66]"></span>
-        Status: Disponible
+    <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+      <div class="flex items-center gap-2 text-xs text-emerald-600 font-medium">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        Disponible
       </div>
       <a 
         href="https://github.com/marcooctavio89" 
         target="_blank" 
         rel="noopener noreferrer" 
-        class="text-xs text-[#00f0ff] hover:underline"
+        class="text-xs text-cyan-600 hover:underline font-medium"
       >
         GitHub Profile ↗
       </a>

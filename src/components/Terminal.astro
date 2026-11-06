@@ -1,5 +1,5 @@
 ---
-// Terminal.astro
+// Terminal.astro — Dark terminal embedded in light design
 ---
 
 <section id="terminal" class="py-20 relative">
@@ -7,32 +7,35 @@
     
     <!-- Section Header -->
     <div class="space-y-3 mb-10 text-center sm:text-left">
-      <div class="flex items-center justify-center sm:justify-start gap-2 font-mono text-sm text-[#00ff66]">
-        <span>04.</span>
-        <span class="tracking-widest uppercase">Consola Interactiva</span>
-        <div class="hidden sm:block h-px bg-[#1f293d] flex-1 max-w-xs"></div>
+      <div class="flex items-center justify-center sm:justify-start gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center shadow-md">
+          <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        </div>
+        <div>
+          <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Consola Interactiva</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Terminal de Comandos
+          </h2>
+        </div>
       </div>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-        Terminal de Diagnóstico & Comandos
-      </h2>
-      <p class="text-slate-400 max-w-2xl text-sm sm:text-base">
+      <p class="text-slate-500 max-w-2xl text-sm sm:text-base sm:ml-[52px]">
         Emulador de consola bash para inspeccionar el perfil de Marco Octavio Maciel Borges directamente desde la línea de comandos.
       </p>
     </div>
 
-    <!-- Terminal Container -->
-    <div class="rounded-2xl bg-[#070a12] border border-[#1f293d] shadow-2xl overflow-hidden font-mono text-xs sm:text-sm glow-cyan">
+    <!-- Terminal Container (dark inset in light page) -->
+    <div class="rounded-2xl bg-slate-900 border border-slate-700 shadow-2xl overflow-hidden font-mono text-xs sm:text-sm">
       
       <!-- Terminal Top Bar -->
-      <div class="bg-[#111827] px-4 py-3 border-b border-[#1f293d] flex items-center justify-between select-none">
+      <div class="bg-slate-800 px-4 py-3 border-b border-slate-700 flex items-center justify-between select-none">
         <div class="flex items-center gap-2">
-          <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block cursor-pointer hover:opacity-100 transition-opacity" title="Cerrar"></span>
-          <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block cursor-pointer hover:opacity-100 transition-opacity" title="Minimizar"></span>
-          <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block cursor-pointer hover:opacity-100 transition-opacity" title="Maximizar"></span>
-          <span class="ml-3 text-slate-400 text-xs hidden sm:inline">bash — marco@portfolio-secops: ~/terminal (tty1)</span>
+          <span class="w-3 h-3 rounded-full bg-red-400/80 inline-block cursor-pointer hover:bg-red-400 transition-colors" title="Cerrar"></span>
+          <span class="w-3 h-3 rounded-full bg-amber-400/80 inline-block cursor-pointer hover:bg-amber-400 transition-colors" title="Minimizar"></span>
+          <span class="w-3 h-3 rounded-full bg-green-400/80 inline-block cursor-pointer hover:bg-green-400 transition-colors" title="Maximizar"></span>
+          <span class="ml-3 text-slate-400 text-xs hidden sm:inline">bash — marco@portfolio: ~/terminal</span>
         </div>
         <div class="flex items-center gap-2 text-[11px] text-slate-500">
-          <span class="w-2 h-2 rounded-full bg-[#00ff66] animate-pulse"></span>
+          <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
           <span>SSH-2.0-OpenSSH_9.6</span>
         </div>
       </div>
@@ -41,18 +44,18 @@
       <div id="terminal-screen" class="p-4 sm:p-6 min-h-[340px] max-h-[520px] overflow-y-auto space-y-3 text-slate-300">
         
         <!-- Welcome ASCII & Banner -->
-        <div class="text-[#00f0ff] font-bold text-xs sm:text-sm whitespace-pre leading-tight">
+        <div class="text-cyan-400 font-bold text-xs sm:text-sm whitespace-pre leading-tight">
   __  __                  __  __            _      _ 
  |  \/  |__ _ _ _ __ ___ |  \/  |__ _ __ _ (_)___ | |
  | |\/| / _` | '_/ _/ _ \| |\/| / _` / _| || / -_)| |
  |_|  |_\__,_|_| \__\___/|_|  |_\__,_\__|_|/_\___||_|
         </div>
 
-        <div class="text-slate-400 text-xs space-y-1 pt-1 pb-2 border-b border-[#1f293d]/60">
-          <p><span class="text-[#00ff66]">● SEC-OPS HOST:</span> portfolio.marco-maciel.internal</p>
-          <p><span class="text-[#00f0ff]">● KERNEL:</span> Linux 6.8.0-sysadmin-asix x86_64</p>
+        <div class="text-slate-400 text-xs space-y-1 pt-1 pb-2 border-b border-slate-700/60">
+          <p><span class="text-green-400">● HOST:</span> portfolio.marco-maciel.dev</p>
+          <p><span class="text-cyan-400">● KERNEL:</span> Linux 6.8.0-sysadmin-asix x86_64</p>
           <p class="text-slate-300">
-            Escribe <span class="text-[#00ff66] font-bold">help</span> para consultar los comandos disponibles o utiliza los botones de acceso rápido inferiores.
+            Escribe <span class="text-green-400 font-bold">help</span> para consultar los comandos disponibles o utiliza los botones de acceso rápido inferiores.
           </p>
         </div>
 
@@ -61,11 +64,11 @@
 
         <!-- Current Command Input Line -->
         <form id="terminal-form" class="flex items-center gap-2 pt-1" autocomplete="off">
-          <span class="text-[#00ff66] font-semibold flex-shrink-0">marco@secops:~$</span>
+          <span class="text-green-400 font-semibold flex-shrink-0">marco@secops:~$</span>
           <input 
             type="text" 
             id="terminal-input" 
-            class="flex-1 bg-transparent text-[#00f0ff] focus:outline-none font-mono text-xs sm:text-sm caret-[#00f0ff] border-none p-0"
+            class="flex-1 bg-transparent text-cyan-400 focus:outline-none font-mono text-xs sm:text-sm caret-cyan-400 border-none p-0"
             placeholder="escribe un comando (ej: help, whoami, skills)..."
             spellcheck="false"
             autocorrect="off"
@@ -76,30 +79,30 @@
       </div>
 
       <!-- Quick Command Buttons Bar -->
-      <div class="bg-[#0b0f19] px-4 py-3 border-t border-[#1f293d] flex flex-wrap items-center gap-2 text-xs">
+      <div class="bg-slate-800/80 px-4 py-3 border-t border-slate-700 flex flex-wrap items-center gap-2 text-xs">
         <span class="text-slate-500 font-mono text-[11px] mr-1 hidden sm:inline">Accesos directos:</span>
-        <button type="button" class="cmd-chip px-2.5 py-1 rounded bg-[#111827] border border-[#1f293d] hover:border-[#00ff66] hover:text-[#00ff66] text-slate-300 font-mono transition-colors" data-cmd="help">
+        <button type="button" class="cmd-chip px-2.5 py-1 rounded-lg bg-slate-700/50 border border-slate-600 hover:border-green-400 hover:text-green-400 text-slate-300 font-mono transition-colors" data-cmd="help">
           help
         </button>
-        <button type="button" class="cmd-chip px-2.5 py-1 rounded bg-[#111827] border border-[#1f293d] hover:border-[#00f0ff] hover:text-[#00f0ff] text-slate-300 font-mono transition-colors" data-cmd="whoami">
+        <button type="button" class="cmd-chip px-2.5 py-1 rounded-lg bg-slate-700/50 border border-slate-600 hover:border-cyan-400 hover:text-cyan-400 text-slate-300 font-mono transition-colors" data-cmd="whoami">
           whoami
         </button>
-        <button type="button" class="cmd-chip px-2.5 py-1 rounded bg-[#111827] border border-[#1f293d] hover:border-[#00f0ff] hover:text-[#00f0ff] text-slate-300 font-mono transition-colors" data-cmd="skills">
+        <button type="button" class="cmd-chip px-2.5 py-1 rounded-lg bg-slate-700/50 border border-slate-600 hover:border-cyan-400 hover:text-cyan-400 text-slate-300 font-mono transition-colors" data-cmd="skills">
           skills
         </button>
-        <button type="button" class="cmd-chip px-2.5 py-1 rounded bg-[#111827] border border-[#1f293d] hover:border-[#00f0ff] hover:text-[#00f0ff] text-slate-300 font-mono transition-colors" data-cmd="projects">
+        <button type="button" class="cmd-chip px-2.5 py-1 rounded-lg bg-slate-700/50 border border-slate-600 hover:border-cyan-400 hover:text-cyan-400 text-slate-300 font-mono transition-colors" data-cmd="projects">
           projects
         </button>
-        <button type="button" class="cmd-chip px-2.5 py-1 rounded bg-[#111827] border border-[#1f293d] hover:border-[#00f0ff] hover:text-[#00f0ff] text-slate-300 font-mono transition-colors" data-cmd="languages">
+        <button type="button" class="cmd-chip px-2.5 py-1 rounded-lg bg-slate-700/50 border border-slate-600 hover:border-cyan-400 hover:text-cyan-400 text-slate-300 font-mono transition-colors" data-cmd="languages">
           languages
         </button>
-        <button type="button" class="cmd-chip px-2.5 py-1 rounded bg-[#111827] border border-[#1f293d] hover:border-[#00f0ff] hover:text-[#00f0ff] text-slate-300 font-mono transition-colors" data-cmd="contact">
+        <button type="button" class="cmd-chip px-2.5 py-1 rounded-lg bg-slate-700/50 border border-slate-600 hover:border-cyan-400 hover:text-cyan-400 text-slate-300 font-mono transition-colors" data-cmd="contact">
           contact
         </button>
-        <button type="button" class="cmd-chip px-2.5 py-1 rounded bg-[#111827] border border-[#1f293d] hover:border-[#00ff66] hover:text-[#00ff66] text-slate-300 font-mono transition-colors" data-cmd="github">
+        <button type="button" class="cmd-chip px-2.5 py-1 rounded-lg bg-slate-700/50 border border-slate-600 hover:border-green-400 hover:text-green-400 text-slate-300 font-mono transition-colors" data-cmd="github">
           github
         </button>
-        <button type="button" class="cmd-chip px-2.5 py-1 rounded bg-[#111827] border border-[#1f293d] hover:border-red-400 hover:text-red-400 text-slate-400 font-mono transition-colors ml-auto" data-cmd="clear">
+        <button type="button" class="cmd-chip px-2.5 py-1 rounded-lg bg-slate-700/50 border border-slate-600 hover:border-red-400 hover:text-red-400 text-slate-400 font-mono transition-colors ml-auto" data-cmd="clear">
           clear
         </button>
       </div>
@@ -122,24 +125,24 @@
 
   const commands: Record<string, string | (() => string)> = {
     help: `
-<div class="text-[#00ff66] font-bold mb-1">COMANDOS DISPONIBLES:</div>
+<div class="text-green-400 font-bold mb-1">COMANDOS DISPONIBLES:</div>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs">
-  <div><span class="text-[#00f0ff] font-bold">whoami</span>      - Resumen del perfil profesional</div>
-  <div><span class="text-[#00f0ff] font-bold">skills</span>      - Matriz de habilidades técnicas</div>
-  <div><span class="text-[#00f0ff] font-bold">projects</span>    - Casos prácticos y auditorías</div>
-  <div><span class="text-[#00f0ff] font-bold">languages</span>   - Idiomas y niveles</div>
-  <div><span class="text-[#00f0ff] font-bold">contact</span>     - Canales de contacto y redes</div>
-  <div><span class="text-[#00f0ff] font-bold">github</span>      - Abre el repositorio GitHub en nueva pestaña</div>
-  <div><span class="text-[#00f0ff] font-bold">cv</span>          - Descarga el currículum en PDF</div>
-  <div><span class="text-[#00f0ff] font-bold">status</span>      - Diagnóstico y telemetría de servicios</div>
-  <div><span class="text-[#00f0ff] font-bold">clear</span>       - Limpia la pantalla de la terminal</div>
+  <div><span class="text-cyan-400 font-bold">whoami</span>      - Resumen del perfil profesional</div>
+  <div><span class="text-cyan-400 font-bold">skills</span>      - Matriz de habilidades técnicas</div>
+  <div><span class="text-cyan-400 font-bold">projects</span>    - Casos prácticos y auditorías</div>
+  <div><span class="text-cyan-400 font-bold">languages</span>   - Idiomas y niveles</div>
+  <div><span class="text-cyan-400 font-bold">contact</span>     - Canales de contacto y redes</div>
+  <div><span class="text-cyan-400 font-bold">github</span>      - Abre el repositorio GitHub en nueva pestaña</div>
+  <div><span class="text-cyan-400 font-bold">cv</span>          - Descarga el currículum en PDF</div>
+  <div><span class="text-cyan-400 font-bold">status</span>      - Diagnóstico y telemetría de servicios</div>
+  <div><span class="text-cyan-400 font-bold">clear</span>       - Limpia la pantalla de la terminal</div>
 </div>
 `,
 
     whoami: `
-<div class="p-2 rounded bg-[#0b0f19] border border-[#1f293d] space-y-1">
+<div class="p-2 rounded bg-slate-800 border border-slate-700 space-y-1">
   <div class="text-white font-bold text-sm">Marco Octavio Maciel Borges</div>
-  <div class="text-[#00ff66]">Técnico en Administración de Sistemas, Redes y Ciberseguridad (ASIX)</div>
+  <div class="text-cyan-400">Técnico en Administración de Sistemas, Redes y Ciberseguridad (ASIX)</div>
   <div class="text-slate-400 text-xs leading-relaxed">
     Especialista en infraestructura Linux/Windows Server, auditoría forense con Wireshark, monitorización centralizada con pila ELK y automatización mediante scripts en Python y Bash.
   </div>
@@ -148,8 +151,8 @@
 
     skills: `
 <div class="space-y-2 text-xs">
-  <div><span class="text-[#00f0ff] font-bold">SISTEMAS & REDES:</span> Linux (Ubuntu Server, LVM, Bash), Windows Server (Active Directory, GPO, FSMO, Samba AD), DNS (BIND9).</div>
-  <div><span class="text-[#00ff66] font-bold">CIBERSEGURIDAD:</span> Wireshark (análisis paquetes), Nmap, Metasploitable, scripts de auditoría en Python, Hardening (SSH, UFW, Iptables).</div>
+  <div><span class="text-cyan-400 font-bold">SISTEMAS & REDES:</span> Linux (Ubuntu Server, LVM, Bash), Windows Server (Active Directory, GPO, FSMO, Samba AD), DNS (BIND9).</div>
+  <div><span class="text-green-400 font-bold">CIBERSEGURIDAD:</span> Wireshark (análisis paquetes), Nmap, Metasploitable, scripts de auditoría en Python, Hardening (SSH, UFW, Iptables).</div>
   <div><span class="text-purple-400 font-bold">MONITORIZACIÓN / SIEM:</span> Pila ELK (Elasticsearch 8, Kibana Dashboards, agentes Winlogbeat).</div>
   <div><span class="text-amber-400 font-bold">DESARROLLO & BD:</span> Python (automatización), PHP, MySQL, Apache, HTML5/CSS3, Git.</div>
 </div>
@@ -157,8 +160,8 @@
 
     projects: `
 <div class="space-y-2 text-xs">
-  <div><span class="text-[#00ff66] font-bold">1. Script Auditoría SSH (auth.log):</span> Detección de ataques de fuerza bruta y parsing forense con Python. <a href="https://github.com/marcooctavio89" target="_blank" class="text-[#00f0ff] underline">github.com/marcooctavio89</a></div>
-  <div><span class="text-[#00f0ff] font-bold">2. Análisis Tráfico Red:</span> Laboratorio con Wireshark sobre servicios FTP/Web en entorno Metasploitable.</div>
+  <div><span class="text-green-400 font-bold">1. Script Auditoría SSH (auth.log):</span> Detección de ataques de fuerza bruta y parsing forense con Python. <a href="https://github.com/marcooctavio89" target="_blank" class="text-cyan-400 underline">github.com/marcooctavio89</a></div>
+  <div><span class="text-cyan-400 font-bold">2. Análisis Tráfico Red:</span> Laboratorio con Wireshark sobre servicios FTP/Web en entorno Metasploitable.</div>
   <div><span class="text-purple-400 font-bold">3. Infraestructura Active Directory & Samba AD:</span> Despliegue de controladores de dominio, auditoría GPO y roles FSMO.</div>
   <div><span class="text-amber-400 font-bold">4. Entorno SIEM Centralizado:</span> Ingesta de eventos con Elasticsearch 8, Kibana y Winlogbeat en Ubuntu.</div>
 </div>
@@ -166,33 +169,33 @@
 
     languages: `
 <div class="text-xs space-y-1">
-  <div><span class="font-bold text-white">Español:</span> <span class="text-[#00ff66]">Nativo / C2</span></div>
-  <div><span class="font-bold text-white">Catalán:</span> <span class="text-[#00ff66]">Nativo / C2</span></div>
-  <div><span class="font-bold text-white">Portugués:</span> <span class="text-[#00ff66]">Nativo / C2</span></div>
-  <div><span class="font-bold text-white">Inglés:</span> <span class="text-[#00f0ff] font-semibold">Intermedio B2</span></div>
+  <div><span class="font-bold text-white">Español:</span> <span class="text-green-400">Nativo / C2</span></div>
+  <div><span class="font-bold text-white">Catalán:</span> <span class="text-green-400">Nativo / C2</span></div>
+  <div><span class="font-bold text-white">Portugués:</span> <span class="text-green-400">Nativo / C2</span></div>
+  <div><span class="font-bold text-white">Inglés:</span> <span class="text-cyan-400 font-semibold">Intermedio B2</span></div>
 </div>
 `,
 
     contact: `
 <div class="text-xs space-y-1">
-  <div>📧 <span class="text-slate-400">Email:</span> <a href="mailto:marcooctavio89@gmail.com" class="text-[#00f0ff] hover:underline font-bold">marcooctavio89@gmail.com</a></div>
-  <div>🐙 <span class="text-slate-400">GitHub:</span> <a href="https://github.com/marcooctavio89" target="_blank" class="text-[#00ff66] hover:underline">https://github.com/marcooctavio89</a></div>
+  <div>📧 <span class="text-slate-400">Email:</span> <a href="mailto:marcooctavio89@gmail.com" class="text-cyan-400 hover:underline font-bold">marcooctavio89@gmail.com</a></div>
+  <div>🐙 <span class="text-slate-400">GitHub:</span> <a href="https://github.com/marcooctavio89" target="_blank" class="text-green-400 hover:underline">https://github.com/marcooctavio89</a></div>
   <div>💼 <span class="text-slate-400">Perfil:</span> Administrador de Sistemas, Redes y Ciberseguridad</div>
 </div>
 `,
 
     status: `
 <div class="font-mono text-xs space-y-1 text-slate-300">
-  <div>[SYSTEM] Node Status: <span class="text-[#00ff66] font-bold">HEALTHY / ALL SERVICES UP</span></div>
-  <div>[SYSADMIN] Linux / Windows Server Domain: <span class="text-[#00f0ff]">SYNCHRONIZED</span></div>
-  <div>[SECURITY] IDS/IPS & Log Parser: <span class="text-[#00ff66]">MONITORING</span></div>
+  <div>[SYSTEM] Node Status: <span class="text-green-400 font-bold">HEALTHY / ALL SERVICES UP</span></div>
+  <div>[SYSADMIN] Linux / Windows Server Domain: <span class="text-cyan-400">SYNCHRONIZED</span></div>
+  <div>[SECURITY] IDS/IPS & Log Parser: <span class="text-green-400">MONITORING</span></div>
   <div>[SIEM] Elasticsearch Cluster: <span class="text-amber-400">STATUS GREEN (3 NODES)</span></div>
 </div>
 `,
 
     github: () => {
       window.open('https://github.com/marcooctavio89', '_blank');
-      return `<span class="text-[#00f0ff]">Redirigiendo a https://github.com/marcooctavio89 en una nueva pestaña...</span>`;
+      return `<span class="text-cyan-400">Redirigiendo a https://github.com/marcooctavio89 en una nueva pestaña...</span>`;
     },
 
     cv: () => {
@@ -200,7 +203,7 @@
       link.href = '/Marco_Maciel_CV.pdf';
       link.download = 'Marco_Maciel_CV.pdf';
       link.click();
-      return `<span class="text-[#00ff66]">Descargando /Marco_Maciel_CV.pdf...</span>`;
+      return `<span class="text-green-400">Descargando /Marco_Maciel_CV.pdf...</span>`;
     },
 
     sudo: `
@@ -225,7 +228,7 @@
     // Render user command line
     const userLine = document.createElement('div');
     userLine.className = 'flex items-center gap-2 text-slate-400';
-    userLine.innerHTML = `<span class="text-[#00ff66] font-bold">marco@secops:~$</span> <span class="text-white">${rawCmd}</span>`;
+    userLine.innerHTML = `<span class="text-green-400 font-bold">marco@secops:~$</span> <span class="text-white">${rawCmd}</span>`;
     terminalOutput?.appendChild(userLine);
 
     // Process output
@@ -244,7 +247,7 @@
     } else {
       responseDiv.innerHTML = `
         <span class="text-red-400 font-mono">bash: comando no encontrado: ${rawCmd}</span>. 
-        Escribe <span class="text-[#00ff66] underline cursor-pointer" onclick="document.querySelector('[data-cmd=help]')?.dispatchEvent(new Event('click'))">help</span> para consultar los comandos válidos.
+        Escribe <span class="text-green-400 underline cursor-pointer" onclick="document.querySelector('[data-cmd=help]')?.dispatchEvent(new Event('click'))">help</span> para consultar los comandos válidos.
       `;
     }
 

@@ -1,5 +1,5 @@
 ---
-// Experience.astro
+// Experience.astro — Light design with turquoise accents
 const experiences = [
   {
     type: "EXPERIENCIA LABORAL",
@@ -7,7 +7,8 @@ const experiences = [
     organization: "Fundació Pere Tarrés",
     period: "Prácticas Formativas FCT",
     location: "Barcelona, España",
-    badgeColor: "#00ff66",
+    badgeColor: "#0d9488",
+    badgeBg: "#f0fdfa",
     summary: "Atención técnica integral a usuarios, resolución de incidencias en puestos de trabajo, mantenimiento preventivo de infraestructura y configuración de redes locales.",
     tasks: [
       "Soporte informático a usuarios de nivel 1 y 2 (hardware, periféricos, sistemas operativos Windows/Linux y aplicaciones).",
@@ -18,12 +19,13 @@ const experiences = [
     tech: ["Soporte Nivel 1/2", "Windows 10/11", "GNU/Linux", "Redes LAN", "Hardware", "Gestión de Incidencias"]
   },
   {
-    type: "EDUCACIÓN SUPERIOR TÉCNICA",
+    type: "EDUCACIÓN SUPERIOR",
     role: "Ciclo Formativo de Grado Superior en Administración de Sistemas Informáticos en Red (ASIX)",
     organization: "Digitech",
     period: "En curso",
     location: "Barcelona, España",
-    badgeColor: "#00f0ff",
+    badgeColor: "#0891b2",
+    badgeBg: "#ecfeff",
     summary: "Formación especializada en la administración, securización y optimización de redes, servidores empresariales y servicios de telecomunicaciones.",
     tasks: [
       "Administración avanzada de servidores Linux (Ubuntu Server, Debian) y Windows Server (AD DS, GPOs).",
@@ -35,12 +37,13 @@ const experiences = [
     tech: ["ASIX", "Linux Server", "Windows Server AD", "VLANs", "Wireshark", "Bash Scripting", "Python", "Proxmox"]
   },
   {
-    type: "FORMACIÓN PROFESIONAL TÉCNICA",
+    type: "FORMACIÓN PROFESIONAL",
     role: "Ciclo Formativo de Grado Medio en Sistemas Microinformáticos y Redes (SMR)",
     organization: "Salesians Sarrià",
     period: "Sep 2023 – Jun 2025",
     location: "Barcelona, España",
-    badgeColor: "#38bdf8",
+    badgeColor: "#0284c7",
+    badgeBg: "#f0f9ff",
     summary: "Formación técnica intensiva en montaje, diagnóstico y mantenimiento de hardware, despliegue de redes de área local y administración básica de sistemas cliente.",
     tasks: [
       "Montaje, ensamblaje y verificación de equipos informáticos en banco de pruebas con diagnóstico y sustitución de hardware.",
@@ -54,75 +57,83 @@ const experiences = [
 ];
 ---
 
-<section id="experiencia" class="py-20 relative bg-[#070a12]/50 border-t border-[#1f293d]/50">
+<section id="experiencia" class="py-20 relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Section Header -->
     <div class="space-y-3 mb-16">
-      <div class="flex items-center gap-2 font-mono text-sm text-[#00f0ff]">
-        <span>05.</span>
-        <span class="tracking-widest uppercase">Trayectoria Profesional</span>
-        <div class="h-px bg-[#1f293d] flex-1 max-w-xs"></div>
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 to-cyan-400 flex items-center justify-center shadow-md shadow-sky-500/20">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <div>
+          <span class="text-xs font-semibold text-sky-600 uppercase tracking-wider">Trayectoria Profesional</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Experiencia & Formación
+          </h2>
+        </div>
       </div>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-        Experiencia & Formación Académica
-      </h2>
-      <p class="text-slate-400 max-w-2xl text-base sm:text-lg">
+      <p class="text-slate-500 max-w-2xl text-base sm:text-lg ml-[52px]">
         Evolución técnica desde la formación académica superior en ASIX hasta la práctica operativa en soporte de infraestructuras.
       </p>
     </div>
 
     <!-- Timeline Layout -->
-    <div class="space-y-8 relative before:absolute before:inset-0 before:left-4 md:before:left-1/2 before:w-0.5 before:bg-[#1f293d] before:-translate-x-1/2 before:hidden md:before:block">
+    <div class="space-y-6">
       {experiences.map((item, index) => (
-        <div class={`relative flex flex-col md:flex-row gap-6 md:gap-12 items-start ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+        <div class="relative flex gap-6 items-start">
           
-          <!-- Timeline Central Node (Desktop) -->
-          <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#111827] border-2 border-[#1f293d] items-center justify-center z-10 group-hover:border-[#00f0ff]">
-            <span class="w-2.5 h-2.5 rounded-full" style={`background-color: ${item.badgeColor};`}></span>
+          <!-- Timeline Left Indicator -->
+          <div class="hidden md:flex flex-col items-center gap-0 flex-shrink-0">
+            <div class="w-10 h-10 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center shadow-sm group-hover:border-cyan-400 transition-colors">
+              <span class="w-3 h-3 rounded-full" style={`background-color: ${item.badgeColor};`}></span>
+            </div>
+            {index < experiences.length - 1 && (
+              <div class="w-0.5 h-full min-h-[40px] bg-slate-200"></div>
+            )}
           </div>
 
-          <!-- Card Content (Half width on desktop) -->
-          <div class="w-full md:w-[calc(50%-2rem)] rounded-2xl bg-[#111827] border border-[#1f293d] p-6 sm:p-7 hover:border-slate-500 transition-all duration-300 shadow-xl group">
+          <!-- Card Content -->
+          <div class="w-full rounded-2xl bg-white border border-slate-200 p-6 sm:p-7 hover:shadow-lg hover:shadow-slate-100 transition-all duration-300 shadow-sm group">
             
             <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
               <span 
-                class="font-mono text-xs px-2.5 py-1 rounded-md border"
-                style={`color: ${item.badgeColor}; border-color: ${item.badgeColor}40; background-color: ${item.badgeColor}10;`}
+                class="text-xs font-semibold px-3 py-1 rounded-full"
+                style={`color: ${item.badgeColor}; background-color: ${item.badgeBg};`}
               >
                 {item.type}
               </span>
-              <span class="font-mono text-xs text-slate-400">{item.period}</span>
+              <span class="text-xs text-slate-400 font-medium">{item.period}</span>
             </div>
 
-            <h3 class="text-xl font-bold text-white group-hover:text-[#00f0ff] transition-colors">
+            <h3 class="text-xl font-bold text-slate-800 group-hover:text-cyan-600 transition-colors">
               {item.role}
             </h3>
 
-            <div class="flex items-center gap-2 font-mono text-xs text-slate-400 mt-1 mb-4">
-              <span class="text-slate-200 font-medium">{item.organization}</span>
+            <div class="flex items-center gap-2 text-xs text-slate-500 mt-1 mb-4 font-medium">
+              <span class="text-slate-700">{item.organization}</span>
               <span>•</span>
-              <span class="text-slate-400">{item.location}</span>
+              <span>{item.location}</span>
             </div>
 
-            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
               {item.summary}
             </p>
 
             <!-- Responsibilities / Learnings -->
-            <ul class="space-y-2 text-xs text-slate-400 mb-6">
+            <ul class="space-y-2 text-xs text-slate-500 mb-6">
               {item.tasks.map((task) => (
                 <li class="flex items-start gap-2">
-                  <span class="text-[#00ff66] font-bold mt-0.5">❯</span>
+                  <span class="text-cyan-500 font-bold mt-0.5">›</span>
                   <span>{task}</span>
                 </li>
               ))}
             </ul>
 
             <!-- Tech badges -->
-            <div class="pt-4 border-t border-[#1f293d] flex flex-wrap gap-1.5">
+            <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
               {item.tech.map((t) => (
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-[#0b0f19] border border-[#1f293d] text-slate-400">
+                <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-slate-50 border border-slate-200 text-slate-500">
                   {t}
                 </span>
               ))}
